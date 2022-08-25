@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #4d57eb;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to top,#26a0da,#314755);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.wrapper {
+    background-color: white;
+    padding: 20px;
+    border-radius: 7px;
+    width: 450px;
+    margin: 0 15px;
+}
+
+h1 {
+    color: #2b7194;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+form input {
+    outline: none;
+    transition: 0.4s;
+    border-radius: 5px;
+    position: relative;
+}
+
+form label input[type="text"] {
+    border: 2px solid #ccc;
+    padding: 17px;
+    width: 100%;
+    font-size: 18px;
+}
+
+form label {
+    position: relative;
+}
+
+form label::before,
+form label::after{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+}
+form label::after{
+    content: "Copied";
+    width: 75px;
+    height: 30px;
+    background-color: #2b7499;
+    top: -17px;
+    right: -8px;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+form label::before{
+    content: "";
+    z-index: 1;
+    border: 11px solid;
+    border-color: #2b7499 transparent transparent;
+    top: 9px;
+    right: 24px;
+}
+
+form label.active::before,
+form label.active::after{
+    opacity: 1;
+}
+
+form label i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #999;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+form input[type="text"]:focus {
+    border-color: #2b7194;
+}
+
+form input[type="text"]:focus~i {
+    color: #2b7194;
+}
+
+form input[type="submit"] {
+    background: transparent;
+    border: 2px solid #2b7194;
+    font-size: 18px;
+    color: #2b7194;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2b7194;
+    color: white;
+}
